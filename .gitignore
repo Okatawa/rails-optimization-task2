@@ -1,2 +1,6 @@
 .idea
 result.json
+profile.callgrind.out.*
+graph.html
+flat.txt
+callstack.html
