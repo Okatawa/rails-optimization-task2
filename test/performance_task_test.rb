@@ -14,3 +14,14 @@ describe 'Performance' do
     end
   end
 end
+
+describe 'Memory' do
+  describe 'generate' do
+    it 'memory usage for 5000 lines' do
+      expect(proc {
+        work 'data_medium.txt'
+        `ps -o rss= -p #{Process.pid}`.to_i / 1024
+      }.call).to be < 70
+    end
+  end
+end
